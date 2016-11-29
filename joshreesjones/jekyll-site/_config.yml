@@ -1,0 +1,7 @@
+# Site settings
+title: Josh Rees-Jones
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge

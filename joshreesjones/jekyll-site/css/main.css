@@ -1,0 +1,112 @@
+* {
+    /*
+    border: 1px dotted gray;
+    */
+}
+
+html {
+    /* Always show the vertical scroll bar to prevent page jumping. */
+    overflow-y: scroll;
+    background-color: #471073;
+}
+
+/**********************\
+ ***   BACKGROUND   ***
+\**********************/
+
+body:after {
+    content: "";
+
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    /*background-image: url("/img/backgrounds/04.jpg");*/
+    background-image: url("/img/backgrounds/milford.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.8;
+    z-index: -1;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 20px;
+}
+
+/******************\
+ ***   HEADER   ***
+\******************/
+
+header {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header h1 {
+    font-family: "Playfair Display";
+    margin: 0;
+}
+
+header nav ul {
+    list-style-type: none;
+
+    padding: 0;
+    float: right;
+
+    text-align: center;
+    font-family: "Playfair Display";
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+header nav ul li a:link,
+header nav ul li a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/****************\
+ ***   PAGE   ***
+\****************/
+
+#page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /*
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    */
+}
+
+/*************************\
+ ***   GENERAL STYLE   ***
+\*************************/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display";
+}
+
+p {
+    font-family: "Arcon";
+}

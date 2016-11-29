@@ -1,0 +1,45 @@
+<p>Back in middle school and high school, my teachers told me that if you run out of time on a test and need to guess the remaining answers, it is better to guess only one answer for each remaining question rather than a different answer for each remaining question. I wasn’t sure that this was correct, so I wrote a simulation.</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">zip_longest</span>
+
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>     <span class="c"># Number of answers per question</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">25</span>    <span class="c"># Number of questions</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c"># Number of tests to simulate</span>
+
+
+
+<span class="k">def</span> <span class="nf">simulate_test</span><span class="p">():</span>
+    <span class="n">answers</span>        <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">)]</span>
+    <span class="n">random_guesses</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">)]</span>
+    <span class="n">single_guess</span>   <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="o">*</span> <span class="n">q</span>
+
+    <span class="n">random_correct</span>       <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">solution</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">guess</span><span class="p">,</span> <span class="n">solution</span> <span class="ow">in</span> <span class="n">zip_longest</span><span class="p">(</span><span class="n">answers</span><span class="p">,</span> <span class="n">random_guesses</span><span class="p">)])</span>
+    <span class="n">single_guess_correct</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">solution</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">guess</span><span class="p">,</span> <span class="n">solution</span> <span class="ow">in</span> <span class="n">zip_longest</span><span class="p">(</span><span class="n">answers</span><span class="p">,</span> <span class="n">single_guess</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">random_correct</span><span class="p">,</span> <span class="n">single_guess_correct</span><span class="p">)</span>
+
+
+
+<span class="n">total_random_correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total_single_guess_correct</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="n">random_correct</span><span class="p">,</span> <span class="n">single_guess_correct</span> <span class="o">=</span> <span class="n">simulate_test</span><span class="p">()</span>
+
+    <span class="n">total_random_correct</span> <span class="o">+=</span> <span class="n">random_correct</span>
+    <span class="n">total_single_guess_correct</span> <span class="o">+=</span> <span class="n">single_guess_correct</span>
+
+<span class="n">total_random_score</span> <span class="o">=</span> <span class="n">total_random_correct</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">total_single_guess_score</span> <span class="o">=</span> <span class="n">total_single_guess_correct</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">total_random_score</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">total_single_guess_score</span><span class="p">)</span></code></pre></div>
+
+<p>The results showed that it doesn’t matter if you guess one answer or guess random answers. Interesting stuff!</p>

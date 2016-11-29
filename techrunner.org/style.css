@@ -1,0 +1,77 @@
+/* Logo color: #298aeb */
+
+body {
+	background-color: #add8e6;
+	font-size: medium;
+	font-family: Verdana, Geneva, Arial, sans-serif;
+}
+
+#allcontent {
+	background-color: white;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 10px;
+	border: 1px solid #aaaaff;
+}
+
+h1 {
+	size: 150%;
+	border-bottom: 1px solid gray;
+}
+
+h2 {
+	size: 130%;
+}
+
+#header {
+	text-align: center;
+	border-bottom: 1px solid #aaaaff;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#footer {
+	padding-top: 20px;
+	text-align: center;
+	font-size: 9px;
+	border-top: 1px solid #aaaaff;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#jumpto {
+	font-size: small;
+	background-color: lightgray;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+	width: 300px;
+	margin: 25px;
+	line-height: 2em;
+}
+
+a:link {
+	color: #298aeb;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #7777ff;
+	text-decoration: none;
+}
+
+a:hover {
+	border-bottom: 1px dotted #aaaaff;
+	text-decoration: none;
+	color: #298aeb;
+}
+
+a.imgLink:hover {
+	border: none;
+}

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/font/PlayfairDisplay-BoldItalic.otf")
+             format("opentype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Arcon";
+    src: url("/font/Arcon-Regular.otf")
+             format("opentype");
+}
+
+@font-face {
+    font-family: "Volkhov";
+    src: url("/font/Volkhov-Regular.ttf")
+            format("truetype");
+}
+
+@font-face {
+    font-family: "Volkhov";
+    src: url("/font/Volkhov-Italic.ttf")
+            format("truetype");
+    font-style: italic;
+}

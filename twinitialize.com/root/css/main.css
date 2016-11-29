@@ -1,0 +1,235 @@
+/**
+ * Twinitialize base CSS file.
+ * 
+ * 
+ * 
+ * CSS declaration blocks are organized by section on the webpage.
+ * 
+ * Property-value pairs are organized like so:
+ *    Positioning
+ *    Display & Box Model
+ *    Color
+ *    Text
+ *    Other
+ * 
+ * 
+ * 
+ * Table of contents:
+ * 
+ * Fonts
+ * Header
+ * Other
+ * 
+ * To navigate to a section, search for the section name preceded
+ * by a tilde (~). Example: "~Header"
+ * 
+ * 
+ * 
+ * Written and maintained by Josh Rees-Jones.
+ * 
+ */
+
+
+
+
+
+/* ============
+   |  ~Fonts  |
+   ============ */
+
+@font-face {
+	font-family: BebasNeue;
+	src: url("../font/BebasNeue.otf") format("opentype");
+}
+
+@font-face {
+	font-family: CodePro;
+	src: url("../font/CodePro.eot");
+	src: url("../font/CodePro.eot?#iefix") format("embedded-opentype"),
+		 url("../font/CodePro.woff") format("woff"),
+		 url("../font/CodePro.ttf") format("truetype"),
+		 url("../font/CodePro.svg#webfont") format("svg");
+}
+
+@font-face {
+	font-family: CodeProLight;
+	src: url("../font/CodeProLight.eot");
+	src: url("../font/CodeProLight.eot?#iefix") format("embedded-opentype"),
+		 url("../font/CodeProLight.woff") format("woff"),
+		 url("../font/CodeProLight.ttf") format("truetype"),
+		 url("../font/CodeProLight.svg#webfont") format("svg");
+}
+
+@font-face {
+	font-family: NovecentoDemiBold;
+	src: url("../font/Novecentosanswide-DemiBold-webfont.eot");
+	src: url("../font/Novecentosanswide-DemiBold-webfont.eot?#iefix") format("embedded-opentype"),
+		 url("../font/Novecentosanswide-DemiBold-webfont.woff") format("woff"),
+		 url("../font/Novecentosanswide-DemiBold-webfont.ttf") format("truetype"),
+		 url("../font/Novecentosanswide-DemiBold-webfont.svg#webfont") format("svg");
+}
+
+
+
+
+
+/* =============
+   |  ~Header  |
+   ============= */
+
+
+#twinitialize-panel-wrap {
+	margin: 0;
+	padding: 0;
+	height: 0px;
+	overflow: hidden;
+
+	background-color: white;
+	border: 2px solid white;
+
+	transition: height 0.4s;
+}
+
+#twinitialize-panel {
+	/* height value also present in /js/main.js */
+	height: 200px;
+	text-align: center;
+}
+
+#twinitialize-panel,
+#twinitialize-tab-wrap {
+	max-width: 1200px;
+	margin: auto;
+}
+
+#twinitialize-tab-wrap {
+	position: relative;
+}
+
+#twinitialize-tab a {
+	display: block;
+	position: absolute;
+	right: 10px;
+
+	padding: 0px 6px;
+	height: 30px;
+	line-height: 25px;
+
+	background-color: #ffffff;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+#twinitialize-tab a:before,
+#twinitialize-tab a:after {
+	position: absolute;
+	top: -1px;
+	width: 15px;
+	height: 15px;
+	content: " ";
+}
+
+#twinitialize-tab a:before {
+	left: -15px;
+	border-top-right-radius: 15px;
+	border-width: 1px 1px 0 0;
+	box-shadow: 5px -5px 0 white;
+}
+
+#twinitialize-tab a:after {
+	right: -15px;
+	border-top-left-radius: 15px;
+	border-width: 1px 0 0 1px;
+	box-shadow: -5px -5px 0 white;
+}
+
+#twinitialize-tab   a:link,
+#twinitialize-tab   a:visited,
+#twinitialize-tab   a:hover,
+#twinitialize-tab   a:active,
+#twinitialize-panel a:link,
+#twinitialize-panel a:visited,
+#twinitialize-panel a:hover,
+#twinitialize-panel a:active {
+	color: #000;
+	text-decoration: none;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#twinitialize-panel h1 {
+	float: left;
+}
+
+#nav-wrap {
+	float: right;
+}
+
+#twinitialize-panel ul {
+	float: left;
+
+	vertical-align: middle;
+	width: 100px;
+	margin-left: 100px;
+	padding: 0px;
+
+	border-right: 4px solid #ff5200;
+
+	text-align: right;
+}
+
+#twinitialize-panel ul li {
+	list-style-type: none;
+	margin: 10px;
+
+}
+
+#twinitialize-panel ul li a:link,
+#twinitialize-panel ul li a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+#twinitialize-panel ul li a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+/* ============
+   |  ~Other  |
+   ============ */
+
+html {
+	overflow: -moz-scrollbars-vertical;
+	overflow-y: scroll;
+}
+
+#page-wrap {
+	max-width: 1200px;
+	margin: 50px auto;
+	border: 1px solid white;
+	background-color: white;
+}
+
+body {
+	background-image: url("../img/noisy-grid.png");
+}
+
+/*h1 {
+	font-family: NovecentoDemiBold;
+	font-size: 200px;
+	text-align: center;
+	color: #333;
+}*/
+
+p {
+	font-size: 16px;
+}
